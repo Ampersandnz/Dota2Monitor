@@ -1,0 +1,10 @@
+{
+  "name": "dota2monitor",
+  "version": "0.0.1",
+  "description": "real-time hero status tracking",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "dota2-gsi" : "*"
+  }
+}
