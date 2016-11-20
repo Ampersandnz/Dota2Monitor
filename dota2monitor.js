@@ -14,7 +14,7 @@ var items = {}; // Dict to map console object name -> Actual item name
 var abilities = {}; // Dict to map console object name -> Actual ability name
 
 server.events.on('newclient', function(client) {
-    var update = "New client connection, IP address: " + client.ip + ", Auth token: " + client.auth.token;
+    var update = "New client connection, IP address: " + client.ip;
     console.log(update);
     io.emit('d2gsi general update', update);
 
@@ -75,6 +75,8 @@ setInterval(function() {
         io.emit('d2gsi gpm update', client.gamestate.player.gpm);
         io.emit('d2gsi xpm update', client.gamestate.player.xpm);
     });
+
+    //io.emit('d2gsi general update', "Test");
 }, 10 * 1000); // Every 10 seconds, update gpm and xpm
 
 app.get('/', function(req, res) {
@@ -99,6 +101,4 @@ http.listen(8081, function() {
 	for (var ability in abilitiesArray) {
 	    abilities[ability] = abilitiesArray[ability];
 	}
-
-	console.log(abilities);
 });
