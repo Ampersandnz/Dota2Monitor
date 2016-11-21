@@ -18,27 +18,27 @@ var abilities = {}; // Dict to map console object name -> Actual ability name
 server.events.on('newclient', function(client) {
     var update = "New client connection, IP address: " + client.ip;
     console.log(update);
-    io.emit('d2gsi general update', update);
+    io.emit('d2gsi message update', update);
 
     client.on('player:activity', function(activity) {
         if (activity == 'playing') {
             update = "Game started!";
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
     client.on('hero:level', function(level) {
         update = heroes[client.gamestate.hero.name] + " is now level " + client.gamestate.hero.level;
         console.log(update);
-        io.emit('d2gsi general update', update);
+        io.emit('d2gsi message update', update);
     });
 
     client.on('abilities:ability0:can_cast', function(can_cast) {
         if (can_cast) {
             update = abilities[client.gamestate.abilities.ability0.name] + " [" + client.gamestate.abilities.ability0.level + "] off cooldown!";
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -46,7 +46,7 @@ server.events.on('newclient', function(client) {
         if (can_cast) {
             update = abilities[client.gamestate.abilities.ability1.name] + " [" + client.gamestate.abilities.ability1.level + "] off cooldown!";
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -54,7 +54,7 @@ server.events.on('newclient', function(client) {
         if (can_cast) {
             update = abilities[client.gamestate.abilities.ability2.name] + " [" + client.gamestate.abilities.ability2.level + "] off cooldown!";
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -63,7 +63,7 @@ server.events.on('newclient', function(client) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -72,7 +72,7 @@ server.events.on('newclient', function(client) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -81,7 +81,7 @@ server.events.on('newclient', function(client) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -90,7 +90,7 @@ server.events.on('newclient', function(client) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -99,7 +99,7 @@ server.events.on('newclient', function(client) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -108,7 +108,7 @@ server.events.on('newclient', function(client) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -117,7 +117,7 @@ server.events.on('newclient', function(client) {
             update = abilities[client.gamestate.abilities.ability3.name] + " [" + client.gamestate.abilities.ability3.level + "] off cooldown!";
 
             console.log(update);
-            io.emit('d2gsi general update', update);
+            io.emit('d2gsi message update', update);
         }
     });
 
@@ -135,6 +135,9 @@ server.events.on('newclient', function(client) {
         }
     });
 
+    //TODO: On hero.name, set the hero and ability icons
+    //TODO: On item slot change, set the item icon
+
     clients.push(client);
 });
 
@@ -142,8 +145,25 @@ setInterval(function() {
     clients.forEach(function(client, index) {
     });
 
-    //io.emit('d2gsi general update', "Test");
-}, 10 * 1000); // Every 10 seconds, update gpm and xpm
+//Just test data
+    io.emit('d2gsi message update', "Test");
+
+    io.emit('d2gsi hero update', "Abaddon");
+    io.emit('d2gsi ability1 update', "Mist Coil");
+    io.emit('d2gsi ability2 update', "Aphotic Shield");
+    io.emit('d2gsi ability3 update', "Curse of Avernus");
+    io.emit('d2gsi ability4 update', "Borrowed Time");
+    io.emit('d2gsi item1 update', "Aghanim's Scepter");
+    io.emit('d2gsi item2 update', "Daedalus");
+    io.emit('d2gsi item3 update', "Tango");
+    io.emit('d2gsi item4 update', "Gem of True Sight");
+    io.emit('d2gsi item5 update', "Scythe of Vyse");
+    io.emit('d2gsi item6 update', "Sange and Yasha");
+    io.emit('d2gsi gpm update', "467");
+    io.emit('d2gsi xpm update', "591");
+//Will remove when the page layout/formatting is correct
+
+}, 1 * 1000); // Every second
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');

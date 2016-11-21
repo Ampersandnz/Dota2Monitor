@@ -1,18 +1,29 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing:
-	border-box;
+	box-sizing: border-box;
 }
 
 body {
 	font: 13px Helvetica, Arial, sans-serif;
 }
 
-#messages {
-	list-style-type: none;
-	margin: 0; padding: 0;
+#current-stats div {
+	width: 100px;
 }
+
+#messages {
+	overflow: auto;
+	margin: 0; 
+	padding: 0;
+
+	/* Firefox */
+	height: -moz-calc(100vh - (188px + 68.5px + 57px + 20px));
+	/* WebKit */
+	height: -webkit-calc(100vh - (188px + 68.5px + 57px + 20px));
+	/* Opera */
+	height: -o-calc(100vh - (188px + 68.5px + 57px + 20px));
+	/* Standard */
+	height: calc(100vh - (188px + 68.5px + 57px + 20px));
+;}
 
 #messages li {
 	padding: 5px 10px;
@@ -20,4 +31,46 @@ body {
 
 #messages li:nth-child(odd) {
 	background: #eee;
+}
+
+.ability-icon {
+	width:96px;
+	height:96px;
+	padding:1px;
+	border:2px solid #021a40;
+}
+
+.hero-icon {
+	width:192px;
+	height:108px;
+	margin-top: 18px;
+	padding:1px;
+	border:2px solid #021a40;
+}
+
+.hero-name {
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	padding-top: 2px;
+}
+
+.item-icon {
+	width:88px;
+	height:64px;
+	padding:1px;
+	border:2px solid #021a40;
+}
+
+#current-hero {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 188px;
+}
+
+p {
+	font-weight: bold;
+	font-size: large;
 }
