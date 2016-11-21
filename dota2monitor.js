@@ -1,8 +1,10 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var d2gsi = require('dota2-gsi');
 var fs = require("fs");
+var path = require('path')
 var itemsJSON = require("./data/items");
 var heroesJSON = require("./data/heroes");
 var abilitiesJSON = require("./data/abilities");
@@ -82,6 +84,8 @@ setInterval(function() {
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 http.listen(8081, function() {
     console.log("Ready to send events to clients on port 8081");
