@@ -8,11 +8,11 @@
   <body>
     <table>
       <tr>
-        <td id="gpm-block">
-          GPM: <div id="gpm"></div>
+        <td>
+          <div id="gpm">GPM: </div>
         </td>
-        <td id="xpm-block">
-          XPM: <div id="xpm"></div>
+        <td>
+          <div id="xpm">XPM: </div>
         </td>
       </tr>
       <tr>
@@ -31,11 +31,11 @@
       });
 
       socket.on('d2gsi gpm update', function(msg){
-        $('#gpm').text(msg);
+        $('#gpm').text("GPM: " + msg);
       });
 
       socket.on('d2gsi xpm update', function(msg){
-        $('#xpm').text(msg);
+        $('#xpm').text("XPM: " msg);
       });
 
     </script>
