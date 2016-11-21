@@ -18,6 +18,15 @@
           <td>
             <div id="xpm">XPM: </div>
           </td>
+          <td>
+            <div id="k">Kills: </div>
+          </td>
+          <td>
+            <div id="d">Deaths: </div>
+          </td>
+          <td>
+            <div id="a">Assists: </div>
+          </td>
         </tr>
       </table>
 
@@ -173,6 +182,18 @@
 
       socket.on('d2gsi xpm update', function(msg){
         $('#xpm').text("XPM: " + msg);
+      });
+
+      socket.on('d2gsi k update', function(msg){
+        $('#k').text("Kills: " + msg);
+      });
+
+      socket.on('d2gsi d update', function(msg){
+        $('#d').text("Deaths: " + msg);
+      });
+
+      socket.on('d2gsi a update', function(msg){
+        $('#a').text("Assists: " + msg);
       });
 
     </script>

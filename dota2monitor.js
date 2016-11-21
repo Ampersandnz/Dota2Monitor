@@ -122,17 +122,28 @@ server.events.on('newclient', function(client) {
     });
 
     client.on('player:gpm', function(gpm) {
-        if (gpm) {
-            console.log("GPM: " + gpm);
-            io.emit('d2gsi gpm update', gpm);
-        }
+        console.log("GPM: " + gpm);
+        io.emit('d2gsi gpm update', gpm);
     });
 
     client.on('player:xpm', function(xpm) {
-        if (xpm) {
-            console.log("XPM: " + xpm);
-            io.emit('d2gsi xpm update', xpm);
-        }
+        console.log("XPM: " + xpm);
+        io.emit('d2gsi xpm update', xpm);
+    });
+
+    client.on('player:kills', function(kills) {
+        console.log("Kills: " + kills);
+        io.emit('d2gsi k update', kills);
+    });
+
+    client.on('player:deaths', function(deaths) {
+        console.log("Deaths: " + deaths);
+        io.emit('d2gsi deaths update', deaths);
+    });
+
+    client.on('player:assists', function(assists) {
+        console.log("Assists: " + assists);
+        io.emit('d2gsi a update', assists);
     });
 
     //TODO: On hero.name, set the hero and ability icons
@@ -161,6 +172,9 @@ setInterval(function() {
     io.emit('d2gsi item6 update', "Sange and Yasha");
     io.emit('d2gsi gpm update', "467");
     io.emit('d2gsi xpm update', "591");
+    io.emit('d2gsi k update', "7");
+    io.emit('d2gsi d update', "3");
+    io.emit('d2gsi a update', "18");
 //Will remove when the page layout/formatting is correct
 
 }, 1 * 1000); // Every second
