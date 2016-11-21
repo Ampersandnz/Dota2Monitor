@@ -40,7 +40,7 @@ server.events.on('newclient', function(client) {
             console.log(update);
             io.emit('d2gsi general update', update);
         }
-    })
+    });
 
     client.on('abilities:ability1:can_cast', function(can_cast) {
         if (can_cast) {
@@ -48,7 +48,7 @@ server.events.on('newclient', function(client) {
             console.log(update);
             io.emit('d2gsi general update', update);
         }
-    })
+    });
 
     client.on('abilities:ability2:can_cast', function(can_cast) {
         if (can_cast) {
@@ -56,7 +56,61 @@ server.events.on('newclient', function(client) {
             console.log(update);
             io.emit('d2gsi general update', update);
         }
-    })
+    });
+
+    client.on('items:slot1:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = items[client.gamestate.items.slot1.name] + " off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi general update', update);
+        }
+    });
+
+    client.on('items:slot2:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = items[client.gamestate.items.slot1.name] + " off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi general update', update);
+        }
+    });
+
+    client.on('items:slot3:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = items[client.gamestate.items.slot1.name] + " off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi general update', update);
+        }
+    });
+
+    client.on('items:slot4:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = items[client.gamestate.items.slot1.name] + " off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi general update', update);
+        }
+    });
+
+    client.on('items:slot5:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = items[client.gamestate.items.slot1.name] + " off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi general update', update);
+        }
+    });
+
+    client.on('items:slot6:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = items[client.gamestate.items.slot1.name] + " off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi general update', update);
+        }
+    });
 
     client.on('abilities:ability3:can_cast', function(can_cast) {
         if (can_cast) {
@@ -65,17 +119,27 @@ server.events.on('newclient', function(client) {
             console.log(update);
             io.emit('d2gsi general update', update);
         }
-    })
+    });
+
+    client.on('player:gpm', function(gpm) {
+        if (gpm) {
+            console.log("GPM: " + gpm);
+            io.emit('d2gsi gpm update', gpm);
+        }
+    });
+
+    client.on('player:xpm', function(xpm) {
+        if (xpm) {
+            console.log("XPM: " + xpm);
+            io.emit('d2gsi xpm update', xpm);
+        }
+    });
 
     clients.push(client);
 });
 
 setInterval(function() {
     clients.forEach(function(client, index) {
-        console.log(heroes[client.gamestate.hero.name] + " GPM: " + client.gamestate.player.gpm + ", XPM: " + client.gamestate.player.xpm);
-
-        io.emit('d2gsi gpm update', client.gamestate.player.gpm);
-        io.emit('d2gsi xpm update', client.gamestate.player.xpm);
     });
 
     //io.emit('d2gsi general update', "Test");
