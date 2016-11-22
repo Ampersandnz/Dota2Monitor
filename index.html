@@ -1,201 +1,260 @@
 <!doctype html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="/css/d2m.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/d2m.css">
 
-    <title>Dota 2 Monitor</title>
-  </head>
+        <title>Dota 2 Monitor</title>
+    </head>
 
-  <body>
-    <div id="stats-container">
-      <p>Current stats:</p>
+    <body>
+        <div id="stats-container">
+            <p>Current stats:</p>
 
-      <table id="current-stats">
-        <tr>
-          <td>
-            <div id="gpm">GPM: </div>
-          </td>
-          <td>
-            <div id="xpm">XPM: </div>
-          </td>
-          <td>
-            <div id="k">Kills: </div>
-          </td>
-          <td>
-            <div id="d">Deaths: </div>
-          </td>
-          <td>
-            <div id="a">Assists: </div>
-          </td>
-        </tr>
-      </table>
-
-      <hr>
-    </div>
-
-    <p>Recent events:</p>
-    <ul id="messages"></ul>
-
-    <div id="current-hero">
-      <hr>
-
-      <table>
-        <tr>
-          <td>
-            <img id="hero" src="images/empty.jpg" alt="" class="hero-icon">
-            <div id="hero-name" class="hero-name"></div>
-          </td>
-
-          <td>
-            <table id="abilities">
-              <tr>
-                <td>
-                  <img id="ability1" src="images/empty.jpg" alt="" class="ability-icon">
-                </td>
-                <td>
-                  <img id="ability2" src="images/empty.jpg" alt="" class="ability-icon">
-                </td>
-                <td>
-                  <img id="ability3" src="images/empty.jpg" alt="" class="ability-icon">
-                </td>
-                <td>
-                  <img id="ability4" src="images/empty.jpg" alt="" class="ability-icon">
-                </td>
-              </tr>
+            <table id="current-stats">
+                <tr>
+                    <td>
+                        <div id="gpm">GPM: </div>
+                    </td>
+                    <td>
+                        <div id="xpm">XPM: </div>
+                    </td>
+                    <td>
+                        <div id="k">Kills: </div>
+                    </td>
+                    <td>
+                        <div id="d">Deaths: </div>
+                    </td>
+                    <td>
+                        <div id="a">Assists: </div>
+                    </td>
+                </tr>
             </table>
-          </td>
 
-          <td>
-            <table id="items">
-              <tr>
-                <td>
-                  <img id="item1" src="images/empty.jpg" alt="" class="item-icon">
-                </td>
-                <td>
-                  <img id="item2" src="images/empty.jpg" alt="" class="item-icon">
-                </td>
-                <td>
-                  <img id="item3" src="images/empty.jpg" alt="" class="item-icon">
-                </td>
-              </tr>
-                <td>
-                  <img id="item4" src="images/empty.jpg" alt="" class="item-icon">
-                </td>
-                <td>
-                  <img id="item5" src="images/empty.jpg" alt="" class="item-icon">
-                </td>
-                <td>
-                  <img id="item6" src="images/empty.jpg" alt="" class="item-icon">
-                </td>
-              </tr>
+            <hr>
+        </div>
+
+        <p>Recent events:</p>
+        <ul id="messages"></ul>
+
+        <div id="current-hero">
+            <hr>
+
+            <table>
+                <tr>
+                    <td>
+                        <img id="hero" src="images/empty.jpg" alt="" class="hero-icon">
+                        <div id="hero-name" class="hero-name"></div>
+                    </td>
+
+                    <td>
+                        <table id="abilities">
+                            <tr>
+                                <td>
+                                    <img id="ability1" src="images/empty.jpg" alt="" class="ability-icon">
+                                </td>
+                                <td>
+                                    <img id="ability2" src="images/empty.jpg" alt="" class="ability-icon">
+                                </td>
+                                <td>
+                                    <img id="ability3" src="images/empty.jpg" alt="" class="ability-icon">
+                                </td>
+                                <td>
+                                    <img id="ability4" src="images/empty.jpg" alt="" class="ability-icon">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td>
+                        <table id="items">
+                            <tr>
+                                <td>
+                                    <img id="item1" src="images/empty.jpg" alt="" class="item-icon">
+                                </td>
+                                <td>
+                                    <img id="item2" src="images/empty.jpg" alt="" class="item-icon">
+                                </td>
+                                <td>
+                                    <img id="item3" src="images/empty.jpg" alt="" class="item-icon">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img id="item4" src="images/empty.jpg" alt="" class="item-icon">
+                                </td>
+                                <td>
+                                    <img id="item5" src="images/empty.jpg" alt="" class="item-icon">
+                                </td>
+                                <td>
+                                    <img id="item6" src="images/empty.jpg" alt="" class="item-icon">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td>
+                        <table id="stash">
+                            <tr>
+                                <td>
+                                    <img id="stash1" src="images/empty.jpg" alt="" class="stash-icon">
+                                </td>
+                                <td>
+                                    <img id="stash2" src="images/empty.jpg" alt="" class="stash-icon">
+                                </td>
+                                <td>
+                                    <img id="stash3" src="images/empty.jpg" alt="" class="stash-icon">
+                                </td>
+                                <td>
+                                    <img id="stash4" src="images/empty.jpg" alt="" class="stash-icon">
+                                </td>
+                                <td>
+                                    <img id="stash5" src="images/empty.jpg" alt="" class="stash-icon">
+                                </td>
+                                <td>
+                                    <img id="stash6" src="images/empty.jpg" alt="" class="stash-icon">
+                                </td>
+                            </tr>
+                            <tr>
+                                <div class="stash-text">Stash</div>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
             </table>
-          </td>
-        </tr>
-      </table>
 
-      <hr>
-    </div>
+            <hr>
+        </div>
 
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
-    <script type="text/javascript">
-      var socket = io();
+        <script type="text/javascript">
+            var socket = io();
 
-      socket.on('d2gsi message update', function(msg){
-        var d = new Date();
-        var t = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            socket.on('d2gsi message update', function(msg){
+                var d = new Date();
+                var t = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 
-        $('#messages').append($('<li>').text(t + " - " + msg));
-        $('#messages').scrollTop($('#messages')[0].scrollHeight); //TODO: Only scroll if already at the bottom - if user scrolls upwards stop auto-resetting the scrollTop.
-      });
+                $('#messages').append($('<li>').text(t + " - " + msg));
+                $('#messages').scrollTop($('#messages')[0].scrollHeight); //TODO: Only scroll if already at the bottom - if user scrolls upwards stop auto-resetting the scrollTop.
+            });
 
-      socket.on('d2gsi hero update', function(msg){
-        $('#hero').attr("src", "/images/heroes/" + msg + ".png");
-        $('#hero').attr("alt", msg);
-        $('#hero-name').text(msg);
-      });
+            socket.on('d2gsi hero update', function(msg){
+                $('#hero').attr("src", "/images/heroes/" + msg + ".png");
+                $('#hero').attr("alt", msg);
+                $('#hero-name').text(msg);
+            });
 
-      socket.on('d2gsi ability1 update', function(msg){
-        var heroName = $('#hero').attr("alt");
+            socket.on('d2gsi ability1 update', function(msg){
+                var heroName = $('#hero').attr("alt");
+                
+                $('#ability1').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
+                $('#ability1').attr("alt", msg);
+            });
 
-        $('#ability1').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
-        $('#ability1').attr("alt", msg);
-      });
+            socket.on('d2gsi ability2 update', function(msg){
+                var heroName = $('#hero').attr("alt");
 
-      socket.on('d2gsi ability2 update', function(msg){
-        var heroName = $('#hero').attr("alt");
+                $('#ability2').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
+                $('#ability2').attr("alt", msg);
+            });
 
-        $('#ability2').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
-        $('#ability2').attr("alt", msg);
-      });
+            socket.on('d2gsi ability3 update', function(msg){
+                var heroName = $('#hero').attr("alt");
 
-      socket.on('d2gsi ability3 update', function(msg){
-        var heroName = $('#hero').attr("alt");
+                $('#ability3').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
+                $('#ability3').attr("alt", msg);
+            });
 
-        $('#ability3').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
-        $('#ability3').attr("alt", msg);
-      });
+            socket.on('d2gsi ability4 update', function(msg){
+                var heroName = $('#hero').attr("alt");
 
-      socket.on('d2gsi ability4 update', function(msg){
-        var heroName = $('#hero').attr("alt");
+                $('#ability4').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
+                $('#ability4').attr("alt", msg);
+            });
 
-        $('#ability4').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
-        $('#ability4').attr("alt", msg);
-      });
+            // TODO: Add support for more than four abilities
 
-      socket.on('d2gsi item1 update', function(msg){
-        $('#item1').attr("src", "/images/items/" + msg + ".png");
-        $('#item1').attr("alt", msg);
-      });
+            socket.on('d2gsi item1 update', function(msg){
+                $('#item1').attr("src", "/images/items/" + msg + ".png");
+                $('#item1').attr("alt", msg);
+            });
 
-      socket.on('d2gsi item2 update', function(msg){
-        $('#item2').attr("src", "/images/items/" + msg + ".png");
-        $('#item2').attr("alt", msg);
-      });
+            socket.on('d2gsi item2 update', function(msg){
+                $('#item2').attr("src", "/images/items/" + msg + ".png");
+                $('#item2').attr("alt", msg);
+            });
 
-      socket.on('d2gsi item3 update', function(msg){
-        $('#item3').attr("src", "/images/items/" + msg + ".png");
-        $('#item3').attr("alt", msg);
-      });
+            socket.on('d2gsi item3 update', function(msg){
+                $('#item3').attr("src", "/images/items/" + msg + ".png");
+                $('#item3').attr("alt", msg);
+            });
 
-      socket.on('d2gsi item4 update', function(msg){
-        $('#item4').attr("src", "/images/items/" + msg + ".png");
-        $('#item4').attr("alt", msg);
-      });
+            socket.on('d2gsi item4 update', function(msg){
+                $('#item4').attr("src", "/images/items/" + msg + ".png");
+                $('#item4').attr("alt", msg);
+            });
 
-      socket.on('d2gsi item5 update', function(msg){
-        $('#item5').attr("src", "/images/items/" + msg + ".png");
-        $('#item5').attr("alt", msg);
-      });
+            socket.on('d2gsi item5 update', function(msg){
+                $('#item5').attr("src", "/images/items/" + msg + ".png");
+                $('#item5').attr("alt", msg);
+            });
 
-      socket.on('d2gsi item6 update', function(msg){
-        $('#item6').attr("src", "/images/items/" + msg + ".png");
-        $('#item6').attr("alt", msg);
-      });
+            socket.on('d2gsi item6 update', function(msg){
+                $('#item6').attr("src", "/images/items/" + msg + ".png");
+                $('#item6').attr("alt", msg);
+            });
 
-      // TODO: Add support for more abilities
+            socket.on('d2gsi stash1 update', function(msg){
+                $('#stash1').attr("src", "/images/items/" + msg + ".png");
+                $('#stash1').attr("alt", msg);
+            });
 
-      socket.on('d2gsi gpm update', function(msg){
-        $('#gpm').text("GPM: " + msg);
-      });
+            socket.on('d2gsi stash2 update', function(msg){
+                $('#stash2').attr("src", "/images/items/" + msg + ".png");
+                $('#stash2').attr("alt", msg);
+            });
 
-      socket.on('d2gsi xpm update', function(msg){
-        $('#xpm').text("XPM: " + msg);
-      });
+            socket.on('d2gsi stash3 update', function(msg){
+                $('#stash3').attr("src", "/images/items/" + msg + ".png");
+                $('#stash3').attr("alt", msg);
+            });
 
-      socket.on('d2gsi k update', function(msg){
-        $('#k').text("Kills: " + msg);
-      });
+            socket.on('d2gsi stash4 update', function(msg){
+                $('#stash4').attr("src", "/images/items/" + msg + ".png");
+                $('#stash4').attr("alt", msg);
+            });
 
-      socket.on('d2gsi d update', function(msg){
-        $('#d').text("Deaths: " + msg);
-      });
+            socket.on('d2gsi stash5 update', function(msg){
+                $('#stash5').attr("src", "/images/items/" + msg + ".png");
+                $('#stash5').attr("alt", msg);
+            });
 
-      socket.on('d2gsi a update', function(msg){
-        $('#a').text("Assists: " + msg);
-      });
+            socket.on('d2gsi stash6 update', function(msg){
+                $('#stash6').attr("src", "/images/items/" + msg + ".png");
+                $('#stash6').attr("alt", msg);
+            });
 
-    </script>
-  </body>
+            socket.on('d2gsi gpm update', function(msg){
+                $('#gpm').text("GPM: " + msg);
+            });
+
+            socket.on('d2gsi xpm update', function(msg){
+                $('#xpm').text("XPM: " + msg);
+            });
+
+            socket.on('d2gsi k update', function(msg){
+                $('#k').text("Kills: " + msg);
+            });
+
+            socket.on('d2gsi d update', function(msg){
+                $('#d').text("Deaths: " + msg);
+            });
+
+            socket.on('d2gsi a update', function(msg){
+                $('#a').text("Assists: " + msg);
+            });
+
+        </script>
+    </body>
 </html>

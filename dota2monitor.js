@@ -149,121 +149,175 @@ server.events.on('newclient', function(client) {
     client.on('hero:name', function(name) {
         var hero = heroes[name];
         console.log("Hero picked: " + hero);
-    	io.emit('d2gsi hero update', hero);
+        io.emit('d2gsi hero update', hero);
     });
 
     client.on('abilities:ability1:name', function(name) {
         var ability = abilities[name];
-		io.emit('d2gsi ability1 update', ability);
+        io.emit('d2gsi ability1 update', ability);
 
-		var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
+        var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('abilities:ability2:name', function(name) {
         var ability = abilities[name];
-		io.emit('d2gsi ability2 update', ability);
+        io.emit('d2gsi ability2 update', ability);
 
-		var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
+        var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('abilities:ability3:name', function(name) {
         var ability = abilities[name];
-		io.emit('d2gsi ability3 update', ability);
+        io.emit('d2gsi ability3 update', ability);
 
-		var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
+        var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('abilities:ability4:name', function(name) {
         var ability = abilities[name];
-		io.emit('d2gsi ability4 update', ability);
+        io.emit('d2gsi ability4 update', ability);
 
-		var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
+        var update = "Ability " + ability + " acquired. TODO: FIND OUT IF THIS IS EMITTED ON THE FIRST SKILL POINT OR ON PICK";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('items:slot1:name', function(name) {
         var item = items[name];
-		io.emit('d2gsi item1 update', item);
+        io.emit('d2gsi item1 update', item);
 
-		var update = "Item " + item + " acquired.";
+        var update = "Item " + item + " acquired.";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('items:slot2:name', function(name) {
         var item = items[name];
-		io.emit('d2gsi item2 update', item);
+        io.emit('d2gsi item2 update', item);
 
-		var update = "Item " + item + " acquired.";
+        var update = "Item " + item + " acquired.";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('items:slot3:name', function(name) {
         var item = items[name];
-		io.emit('d2gsi item3 update', item);
+        io.emit('d2gsi item3 update', item);
 
-		var update = "Item " + item + " acquired.";
+        var update = "Item " + item + " acquired.";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('items:slot4:name', function(name) {
         var item = items[name];
-		io.emit('d2gsi item4 update', item);
+        io.emit('d2gsi item4 update', item);
 
-		var update = "Item " + item + " acquired.";
+        var update = "Item " + item + " acquired.";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('items:slot5:name', function(name) {
         var item = items[name];
-		io.emit('d2gsi item5 update', item);
+        io.emit('d2gsi item5 update', item);
 
-		var update = "Item " + item + " acquired.";
+        var update = "Item " + item + " acquired.";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('items:slot6:name', function(name) {
         var item = items[name];
-		io.emit('d2gsi item6 update', item);
+        io.emit('d2gsi item6 update', item);
 
-		var update = "Item " + item + " acquired.";
+        var update = "Item " + item + " acquired.";
+        console.log(update);
+        io.emit('d2gsi message update', update);
+    });
+
+    client.on('items:stash1:name', function(name) {
+        var item = items[name];
+        io.emit('d2gsi stash1 update', item);
+
+        var update = "Stash " + item + " acquired.";
+        console.log(update);
+        io.emit('d2gsi message update', update);
+    });
+
+    client.on('items:stash2:name', function(name) {
+        var item = items[name];
+        io.emit('d2gsi stash2 update', item);
+
+        var update = "Stash " + item + " acquired.";
+        console.log(update);
+        io.emit('d2gsi message update', update);
+    });
+
+    client.on('items:stash3:name', function(name) {
+        var item = items[name];
+        io.emit('d2gsi stash3 update', item);
+
+        var update = "Stash " + item + " acquired.";
+        console.log(update);
+        io.emit('d2gsi message update', update);
+    });
+
+    client.on('items:stash4:name', function(name) {
+        var item = items[name];
+        io.emit('d2gsi stash4 update', item);
+
+        var update = "Stash " + item + " acquired.";
+        console.log(update);
+        io.emit('d2gsi message update', update);
+    });
+
+    client.on('items:stash5:name', function(name) {
+        var item = items[name];
+        io.emit('d2gsi stash5 update', item);
+
+        var update = "Stash " + item + " acquired.";
+        console.log(update);
+        io.emit('d2gsi message update', update);
+    });
+
+    client.on('items:stash6:name', function(name) {
+        var item = items[name];
+        io.emit('d2gsi stash6 update', item);
+
+        var update = "Stash " + item + " acquired.";
         console.log(update);
         io.emit('d2gsi message update', update);
     });
 
     client.on('map:gamestate', function(gamestate) {
-		var update = "map:gamestate - " + gamestate;
+        var update = "map:gamestate - " + gamestate;
         console.log(update);
-		io.emit('d2gsi message update', update);
+        io.emit('d2gsi message update', update);
     });
 
     client.on('map:win_team', function(win_team) {
-		var update = "map:win_team - " + win_team;
+        var update = "map:win_team - " + win_team;
         console.log(update);
-		io.emit('d2gsi message update', update);
+        io.emit('d2gsi message update', update);
     });
 
     client.on('map:ward_purchase_cooldown', function(ward_purchase_cooldown) {
-		var update = "map:ward_purchase_cooldown - " + ward_purchase_cooldown;
+        var update = "map:ward_purchase_cooldown - " + ward_purchase_cooldown;
         console.log(update);
-		io.emit('d2gsi message update', update);
+        io.emit('d2gsi message update', update);
     });
 
     client.on('player:team_name', function(team_name) {
-		var update = "player:team_name - " + team_name;
+        var update = "player:team_name - " + team_name;
         console.log(update);
-		io.emit('d2gsi message update', update);
+        io.emit('d2gsi message update', update);
     });
 
     clients.push(client);
@@ -276,16 +330,23 @@ setInterval(function() {
     io.emit('d2gsi message update', "Test");
 
 // Just test data
-    // io.emit('d2gsi ability1 update', "Mist Coil");
-    // io.emit('d2gsi ability2 update', "Aphotic Shield");
-    // io.emit('d2gsi ability3 update', "Curse of Avernus");
-    // io.emit('d2gsi ability4 update', "Borrowed Time");
-    // io.emit('d2gsi item1 update', "Aghanim's Scepter");
-    // io.emit('d2gsi item2 update', "Daedalus");
-    // io.emit('d2gsi item3 update', "Tango");
-    // io.emit('d2gsi item4 update', "Gem of True Sight");
-    // io.emit('d2gsi item5 update', "Scythe of Vyse");
-    // io.emit('d2gsi item6 update', "Sange and Yasha");
+    // io.emit('d2gsi hero update', heroes["npc_dota_hero_abaddon"]);
+    // io.emit('d2gsi ability1 update', abilities["abaddon_death_coil"]);
+    // io.emit('d2gsi ability2 update', abilities["abaddon_aphotic_shield"]);
+    // io.emit('d2gsi ability3 update', abilities["abaddon_frostmourne"]);
+    // io.emit('d2gsi ability4 update', abilities["abaddon_borrowed_time"]);
+    // io.emit('d2gsi item1 update', items["item_ultimate_scepter"]);
+    // io.emit('d2gsi item2 update', items["item_greater_crit"]);
+    // io.emit('d2gsi item3 update', items["item_travel_boots_2"]);
+    // io.emit('d2gsi item4 update', items["item_gem"]);
+    // io.emit('d2gsi item5 update', items["item_sheepstick"]);
+    // io.emit('d2gsi item6 update', items["item_sange_and_yasha"]);
+    // io.emit('d2gsi stash1 update', items["item_dagon_4"]);
+    // io.emit('d2gsi stash2 update', items["item_bracer"]);
+    // io.emit('d2gsi stash3 update', items["item_ward_sentry"]);
+    // io.emit('d2gsi stash4 update', items["item_recipe_desolator"]);
+    // io.emit('d2gsi stash5 update', items["item_rapier"]);
+    // io.emit('d2gsi stash6 update', items["item_tango"]);
     // io.emit('d2gsi gpm update', "467");
     // io.emit('d2gsi xpm update', "591");
     // io.emit('d2gsi k update', "7");
@@ -304,19 +365,19 @@ app.use(express.static(path.join(__dirname, '/public')));
 http.listen(8081, function() {
     console.log("Ready to send events to clients on port 8081");
 
-	var itemsArray = itemsJSON.items[0];
-	var heroesArray = heroesJSON.heroes[0];
-	var abilitiesArray = abilitiesJSON.abilities[0];
+    var itemsArray = itemsJSON.items[0];
+    var heroesArray = heroesJSON.heroes[0];
+    var abilitiesArray = abilitiesJSON.abilities[0];
 
-	for (var item in itemsArray) {
-	    items[item] = itemsArray[item];
-	}
+    for (var item in itemsArray) {
+        items[item] = itemsArray[item];
+    }
 
-	for (var hero in heroesArray) {
-	    heroes[hero] = heroesArray[hero];
-	}
+    for (var hero in heroesArray) {
+        heroes[hero] = heroesArray[hero];
+    }
 
-	for (var ability in abilitiesArray) {
-	    abilities[ability] = abilitiesArray[ability];
-	}
+    for (var ability in abilitiesArray) {
+        abilities[ability] = abilitiesArray[ability];
+    }
 });
