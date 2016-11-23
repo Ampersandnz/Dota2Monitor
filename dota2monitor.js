@@ -133,7 +133,7 @@ server.events.on('newclient', function(client) {
 
     client.on('player:kills', function(kills) {
         console.log("Kills: " + kills);
-        io.emit('d2gsi k update', kills);
+        io.emit('d2gsi kills update', kills);
     });
 
     client.on('player:deaths', function(deaths) {
@@ -143,7 +143,7 @@ server.events.on('newclient', function(client) {
 
     client.on('player:assists', function(assists) {
         console.log("Assists: " + assists);
-        io.emit('d2gsi a update', assists);
+        io.emit('d2gsi assists update', assists);
     });
 
     client.on('hero:name', function(name) {
@@ -330,28 +330,28 @@ setInterval(function() {
     io.emit('d2gsi message update', "Test");
 
 // Just test data
-    // io.emit('d2gsi hero update', heroes["npc_dota_hero_abaddon"]);
-    // io.emit('d2gsi ability1 update', abilities["abaddon_death_coil"]);
-    // io.emit('d2gsi ability2 update', abilities["abaddon_aphotic_shield"]);
-    // io.emit('d2gsi ability3 update', abilities["abaddon_frostmourne"]);
-    // io.emit('d2gsi ability4 update', abilities["abaddon_borrowed_time"]);
-    // io.emit('d2gsi item1 update', items["item_ultimate_scepter"]);
-    // io.emit('d2gsi item2 update', items["item_greater_crit"]);
-    // io.emit('d2gsi item3 update', items["item_travel_boots_2"]);
-    // io.emit('d2gsi item4 update', items["item_gem"]);
-    // io.emit('d2gsi item5 update', items["item_sheepstick"]);
-    // io.emit('d2gsi item6 update', items["item_sange_and_yasha"]);
-    // io.emit('d2gsi stash1 update', items["item_dagon_4"]);
-    // io.emit('d2gsi stash2 update', items["item_bracer"]);
-    // io.emit('d2gsi stash3 update', items["item_ward_sentry"]);
-    // io.emit('d2gsi stash4 update', items["item_recipe_desolator"]);
-    // io.emit('d2gsi stash5 update', items["item_rapier"]);
-    // io.emit('d2gsi stash6 update', items["item_tango"]);
-    // io.emit('d2gsi gpm update', "467");
-    // io.emit('d2gsi xpm update', "591");
-    // io.emit('d2gsi k update', "7");
-    // io.emit('d2gsi d update', "3");
-    // io.emit('d2gsi a update', "18");
+    io.emit('d2gsi hero update', heroes["npc_dota_hero_abaddon"]);
+    io.emit('d2gsi ability1 update', abilities["abaddon_death_coil"]);
+    io.emit('d2gsi ability2 update', abilities["abaddon_aphotic_shield"]);
+    io.emit('d2gsi ability3 update', abilities["abaddon_frostmourne"]);
+    io.emit('d2gsi ability4 update', abilities["abaddon_borrowed_time"]);
+    io.emit('d2gsi item1 update', items["item_ultimate_scepter"]);
+    io.emit('d2gsi item2 update', items["item_greater_crit"]);
+    io.emit('d2gsi item3 update', items["item_travel_boots_2"]);
+    io.emit('d2gsi item4 update', items["item_gem"]);
+    io.emit('d2gsi item5 update', items["item_sheepstick"]);
+    io.emit('d2gsi item6 update', items["item_sange_and_yasha"]);
+    io.emit('d2gsi stash1 update', items["item_dagon_4"]);
+    io.emit('d2gsi stash2 update', items["item_bracer"]);
+    io.emit('d2gsi stash3 update', items["item_ward_sentry"]);
+    io.emit('d2gsi stash4 update', items["item_recipe_desolator"]);
+    io.emit('d2gsi stash5 update', items["item_rapier"]);
+    io.emit('d2gsi stash6 update', items["item_tango"]);
+    io.emit('d2gsi gpm update', "467");
+    io.emit('d2gsi xpm update', "591");
+    io.emit('d2gsi kills update', "7");
+    io.emit('d2gsi deaths update', "3");
+    io.emit('d2gsi assists update', "18");
 //Will remove when the page layout/formatting is correct
 
 }, 1 * 1000); // Every second

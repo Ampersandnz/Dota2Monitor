@@ -131,7 +131,8 @@
         <script type="text/javascript">
             var socket = io();
 
-            socket.on('d2gsi message update', function(msg){
+            // General messages to be logged
+            socket.on('d2gsi message update', function(msg) {
                 var d = new Date();
                 var t = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 
@@ -139,34 +140,36 @@
                 $('#messages').scrollTop($('#messages')[0].scrollHeight); //TODO: Only scroll if already at the bottom - if user scrolls upwards stop auto-resetting the scrollTop.
             });
 
-            socket.on('d2gsi hero update', function(msg){
+            // Hero name and portrait
+            socket.on('d2gsi hero update', function(msg) {
                 $('#hero').attr("src", "/images/heroes/" + msg + ".png");
                 $('#hero').attr("alt", msg);
                 $('#hero-name').text(msg);
             });
 
-            socket.on('d2gsi ability1 update', function(msg){
+            // Hero's abilities
+            socket.on('d2gsi ability1 update', function(msg) {
                 var heroName = $('#hero').attr("alt");
                 
                 $('#ability1').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability1').attr("alt", msg);
             });
 
-            socket.on('d2gsi ability2 update', function(msg){
+            socket.on('d2gsi ability2 update', function(msg) {
                 var heroName = $('#hero').attr("alt");
 
                 $('#ability2').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability2').attr("alt", msg);
             });
 
-            socket.on('d2gsi ability3 update', function(msg){
+            socket.on('d2gsi ability3 update', function(msg) {
                 var heroName = $('#hero').attr("alt");
 
                 $('#ability3').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability3').attr("alt", msg);
             });
 
-            socket.on('d2gsi ability4 update', function(msg){
+            socket.on('d2gsi ability4 update', function(msg) {
                 var heroName = $('#hero').attr("alt");
 
                 $('#ability4').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
@@ -175,86 +178,149 @@
 
             // TODO: Add support for more than four abilities
 
-            socket.on('d2gsi item1 update', function(msg){
-                $('#item1').attr("src", "/images/items/" + msg + ".png");
+            // Items in inventory
+            socket.on('d2gsi item1 update', function(msg) {
                 $('#item1').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#item1').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi item2 update', function(msg){
-                $('#item2').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi item2 update', function(msg) {
                 $('#item2').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#item2').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi item3 update', function(msg){
-                $('#item3').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi item3 update', function(msg) {
                 $('#item3').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#item3').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi item4 update', function(msg){
-                $('#item4').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi item4 update', function(msg) {
                 $('#item4').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#item4').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi item5 update', function(msg){
-                $('#item5').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi item5 update', function(msg) {
                 $('#item5').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#item5').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi item6 update', function(msg){
-                $('#item6').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi item6 update', function(msg) {
                 $('#item6').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#item6').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi stash1 update', function(msg){
-                $('#stash1').attr("src", "/images/items/" + msg + ".png");
+            // Items in stash
+            socket.on('d2gsi stash1 update', function(msg) {
                 $('#stash1').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#stash1').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi stash2 update', function(msg){
-                $('#stash2').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi stash2 update', function(msg) {
                 $('#stash2').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#stash2').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi stash3 update', function(msg){
-                $('#stash3').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi stash3 update', function(msg) {
                 $('#stash3').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#stash3').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi stash4 update', function(msg){
-                $('#stash4').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi stash4 update', function(msg) {
                 $('#stash4').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#stash4').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi stash5 update', function(msg){
-                $('#stash5').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi stash5 update', function(msg) {
                 $('#stash5').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#stash5').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi stash6 update', function(msg){
-                $('#stash6').attr("src", "/images/items/" + msg + ".png");
+            socket.on('d2gsi stash6 update', function(msg) {
                 $('#stash6').attr("alt", msg);
+
+                if (msg.indexOf("Recipe") > -1) {
+                    msg = "Recipe";
+                }
+
+                $('#stash6').attr("src", "/images/items/" + msg + ".png");
             });
 
-            socket.on('d2gsi gpm update', function(msg){
+            // GPM & XPM
+            socket.on('d2gsi gpm update', function(msg) {
                 $('#gpm').text("GPM: " + msg);
             });
 
-            socket.on('d2gsi xpm update', function(msg){
+            socket.on('d2gsi xpm update', function(msg) {
                 $('#xpm').text("XPM: " + msg);
             });
 
-            socket.on('d2gsi k update', function(msg){
+            // K/D/A
+            socket.on('d2gsi kills update', function(msg) {
                 $('#k').text("Kills: " + msg);
             });
 
-            socket.on('d2gsi d update', function(msg){
+            socket.on('d2gsi deaths update', function(msg) {
                 $('#d').text("Deaths: " + msg);
             });
 
-            socket.on('d2gsi a update', function(msg){
+            socket.on('d2gsi assists update', function(msg) {
                 $('#a').text("Assists: " + msg);
             });
-
         </script>
     </body>
 </html>
