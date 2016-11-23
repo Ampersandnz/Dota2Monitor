@@ -152,6 +152,9 @@ server.events.on('newclient', function(client) {
         io.emit('d2gsi hero update', hero);
     });
 
+    // TODO: Send a custom ability object with name and source hero specified
+    // So that things like Rubick steal will be able to find the correct icon
+
     client.on('abilities:ability1:name', function(name) {
         var ability = abilities[name];
         io.emit('d2gsi ability1 update', ability);
