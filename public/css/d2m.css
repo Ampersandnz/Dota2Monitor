@@ -4,6 +4,7 @@
 
 body {
 	font: 13px Helvetica, Arial, sans-serif;
+	padding-left: 10px;
 }
 
 #current-stats div {
@@ -81,6 +82,14 @@ body {
     left: 0;
     right: 0;
     height: 188px;
+}
+
+#hero {
+	padding-left: 5px;
+}
+
+#abilities, #items, #stash {
+	padding-left: 15px;
 }
 
 p {

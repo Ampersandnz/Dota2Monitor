@@ -36,18 +36,18 @@
         <p>Recent events:</p>
         <ul id="messages"></ul>
 
-        <div id="current-hero">
+        <div>
             <hr>
 
             <table>
                 <tr>
-                    <td>
-                        <img id="hero" src="images/empty.jpg" alt="" class="hero-icon">
+                    <td id="hero">
+                        <img id="hero-image" src="images/empty.jpg" alt="" class="hero-icon">
                         <div id="hero-name" class="hero-name"></div>
                     </td>
 
-                    <td>
-                        <table id="abilities">
+                    <td id="abilities">
+                        <table>
                             <tr>
                                 <td>
                                     <img id="ability1" src="images/empty.jpg" alt="" class="ability-icon">
@@ -65,8 +65,8 @@
                         </table>
                     </td>
 
-                    <td>
-                        <table id="items">
+                    <td id="items">
+                        <table>
                             <tr>
                                 <td>
                                     <img id="item1" src="images/empty.jpg" alt="" class="item-icon">
@@ -92,8 +92,8 @@
                         </table>
                     </td>
 
-                    <td>
-                        <table id="stash">
+                    <td id="stash">
+                        <table>
                             <tr>
                                 <td>
                                     <img id="stash1" src="images/empty.jpg" alt="" class="stash-icon">
@@ -142,35 +142,35 @@
 
             // Hero name and portrait
             socket.on('d2gsi hero update', function(msg) {
-                $('#hero').attr("src", "/images/heroes/" + msg + ".png");
-                $('#hero').attr("alt", msg);
+                $('#hero-image').attr("src", "/images/heroes/" + msg + ".png");
+                $('#hero-image').attr("alt", msg);
                 $('#hero-name').text(msg);
             });
 
             // Hero's abilities
             socket.on('d2gsi ability1 update', function(msg) {
-                var heroName = $('#hero').attr("alt");
+                var heroName = $('#hero-image').attr("alt");
                 
                 $('#ability1').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability1').attr("alt", msg);
             });
 
             socket.on('d2gsi ability2 update', function(msg) {
-                var heroName = $('#hero').attr("alt");
+                var heroName = $('#hero-image').attr("alt");
 
                 $('#ability2').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability2').attr("alt", msg);
             });
 
             socket.on('d2gsi ability3 update', function(msg) {
-                var heroName = $('#hero').attr("alt");
+                var heroName = $('#hero-image').attr("alt");
 
                 $('#ability3').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability3').attr("alt", msg);
             });
 
             socket.on('d2gsi ability4 update', function(msg) {
-                var heroName = $('#hero').attr("alt");
+                var heroName = $('#hero-image').attr("alt");
 
                 $('#ability4').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
                 $('#ability4').attr("alt", msg);
