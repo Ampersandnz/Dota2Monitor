@@ -43,7 +43,7 @@
                 <tr>
                     <td id="hero">
                         <img id="hero-image" src="images/empty.jpg" alt="" class="hero-icon">
-                        <div id="hero-name" class="hero-name"></div>
+                        <div id="hero-name" class="hero-name">Hero</div>
                     </td>
 
                     <td id="abilities">
@@ -60,6 +60,12 @@
                                 </td>
                                 <td>
                                     <img id="ability4" src="images/empty.jpg" alt="" class="ability-icon">
+                                </td>
+                                <td>
+                                    <img id="ability5" src="images/empty.jpg" alt="" class="ability-icon">
+                                </td>
+                                <td>
+                                    <img id="ability6" src="images/empty.jpg" alt="" class="ability-icon">
                                 </td>
                             </tr>
                         </table>
@@ -131,6 +137,9 @@
         <script type="text/javascript">
             var socket = io();
 
+            $('#ability5').hide();
+            $('#ability6').hide();
+
             // General messages to be logged
             socket.on('d2gsi message update', function(msg) {
                 var d = new Date();
@@ -176,7 +185,21 @@
                 $('#ability4').attr("alt", msg);
             });
 
-            // TODO: Add support for more than four abilities
+            socket.on('d2gsi ability5 update', function(msg) {
+                var heroName = $('#hero-image').attr("alt");
+
+                $('#ability5').show();
+                $('#ability5').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
+                $('#ability5').attr("alt", msg);
+            });
+
+            socket.on('d2gsi ability6 update', function(msg) {
+                var heroName = $('#hero-image').attr("alt");
+
+                $('#ability6').show();
+                $('#ability6').attr("src", "/images/abilities/" + heroName + "/" + msg + ".png");
+                $('#ability6').attr("alt", msg);
+            });
 
             // Items in inventory
             socket.on('d2gsi item1 update', function(msg) {

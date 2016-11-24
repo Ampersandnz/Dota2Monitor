@@ -67,6 +67,24 @@ server.events.on('newclient', function(client) {
         }
     });
 
+    client.on('abilities:ability4:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = abilities[client.gamestate.abilities.ability4.name] + " [" + client.gamestate.abilities.ability4.level + "] off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi message update', update);
+        }
+    });
+
+    client.on('abilities:ability5:can_cast', function(can_cast) {
+        if (can_cast) {
+            update = abilities[client.gamestate.abilities.ability5.name] + " [" + client.gamestate.abilities.ability5.level + "] off cooldown!";
+
+            console.log(update);
+            io.emit('d2gsi message update', update);
+        }
+    });
+
     client.on('items:slot1:can_cast', function(can_cast) {
         if (can_cast) {
             update = items[client.gamestate.items.slot1.name] + " off cooldown!";
@@ -151,9 +169,6 @@ server.events.on('newclient', function(client) {
         console.log("Hero picked: " + hero);
         io.emit('d2gsi hero update', hero);
     });
-
-    // TODO: Send a custom ability object with name and source hero specified
-    // So that things like Rubick steal will be able to find the correct icon
 
     client.on('abilities:ability1:name', function(name) {
         var ability = abilities[name];
@@ -333,28 +348,30 @@ setInterval(function() {
     io.emit('d2gsi message update', "Test");
 
 // Just test data
-    io.emit('d2gsi hero update', heroes["npc_dota_hero_abaddon"]);
-    io.emit('d2gsi ability1 update', abilities["abaddon_death_coil"]);
-    io.emit('d2gsi ability2 update', abilities["abaddon_aphotic_shield"]);
-    io.emit('d2gsi ability3 update', abilities["abaddon_frostmourne"]);
-    io.emit('d2gsi ability4 update', abilities["abaddon_borrowed_time"]);
-    io.emit('d2gsi item1 update', items["item_ultimate_scepter"]);
-    io.emit('d2gsi item2 update', items["item_greater_crit"]);
-    io.emit('d2gsi item3 update', items["item_travel_boots_2"]);
-    io.emit('d2gsi item4 update', items["item_gem"]);
-    io.emit('d2gsi item5 update', items["item_sheepstick"]);
-    io.emit('d2gsi item6 update', items["item_sange_and_yasha"]);
-    io.emit('d2gsi stash1 update', items["item_dagon_4"]);
-    io.emit('d2gsi stash2 update', items["item_bracer"]);
-    io.emit('d2gsi stash3 update', items["item_ward_sentry"]);
-    io.emit('d2gsi stash4 update', items["item_recipe_desolator"]);
-    io.emit('d2gsi stash5 update', items["item_rapier"]);
-    io.emit('d2gsi stash6 update', items["item_tango"]);
-    io.emit('d2gsi gpm update', "467");
-    io.emit('d2gsi xpm update', "591");
-    io.emit('d2gsi kills update', "7");
-    io.emit('d2gsi deaths update', "3");
-    io.emit('d2gsi assists update', "18");
+    // io.emit('d2gsi hero update', heroes["npc_dota_hero_abaddon"]);
+    // io.emit('d2gsi ability1 update', abilities["abaddon_death_coil"]);
+    // io.emit('d2gsi ability2 update', abilities["abaddon_aphotic_shield"]);
+    // io.emit('d2gsi ability3 update', abilities["abaddon_frostmourne"]);
+    // io.emit('d2gsi ability4 update', abilities["abaddon_borrowed_time"]);
+    // io.emit('d2gsi ability5 update', abilities["abaddon_frostmourne"]);
+    // io.emit('d2gsi ability6 update', abilities["abaddon_borrowed_time"]);
+    // io.emit('d2gsi item1 update', items["item_ultimate_scepter"]);
+    // io.emit('d2gsi item2 update', items["item_greater_crit"]);
+    // io.emit('d2gsi item3 update', items["item_travel_boots_2"]);
+    // io.emit('d2gsi item4 update', items["item_gem"]);
+    // io.emit('d2gsi item5 update', items["item_sheepstick"]);
+    // io.emit('d2gsi item6 update', items["item_sange_and_yasha"]);
+    // io.emit('d2gsi stash1 update', items["item_dagon_4"]);
+    // io.emit('d2gsi stash2 update', items["item_bracer"]);
+    // io.emit('d2gsi stash3 update', items["item_ward_sentry"]);
+    // io.emit('d2gsi stash4 update', items["item_recipe_desolator"]);
+    // io.emit('d2gsi stash5 update', items["item_rapier"]);
+    // io.emit('d2gsi stash6 update', items["item_tango"]);
+    // io.emit('d2gsi gpm update', "467");
+    // io.emit('d2gsi xpm update', "591");
+    // io.emit('d2gsi kills update', "7");
+    // io.emit('d2gsi deaths update', "3");
+    // io.emit('d2gsi assists update', "18");
 //Will remove when the page layout/formatting is correct
 
 }, 1 * 1000); // Every second
@@ -366,7 +383,7 @@ app.get('/', function(req, res) {
 app.use(express.static(path.join(__dirname, '/public')));
 
 http.listen(8081, function() {
-    console.log("Ready to send events to clients on port 8081");
+    console.log("Initialising dictionaries");
 
     var itemsArray = itemsJSON.items[0];
     var heroesArray = heroesJSON.heroes[0];
@@ -383,4 +400,6 @@ http.listen(8081, function() {
     for (var ability in abilitiesArray) {
         abilities[ability] = abilitiesArray[ability];
     }
+
+    console.log("Ready to send events to clients on port 8081");
 });
