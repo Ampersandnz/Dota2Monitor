@@ -17,14 +17,14 @@ body {
 	padding: 0;
 
 	/* Firefox */
-	height: -moz-calc(100vh - (188px + 68.5px + 57px + 20px));
+	height: -moz-calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px));
 	/* WebKit */
-	height: -webkit-calc(100vh - (188px + 68.5px + 57px + 20px));
+	height: -webkit-calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px));
 	/* Opera */
-	height: -o-calc(100vh - (188px + 68.5px + 57px + 20px));
+	height: -o-calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px));
 	/* Standard */
-	height: calc(100vh - (188px + 68.5px + 57px + 20px));
-;}
+	height: calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px)); /* Size of viewport - (Current stats header block, Recent events header text, its top and bottom padding, size of hero status footer) */
+}
 
 #messages li {
 	padding: 5px 10px;
@@ -76,7 +76,7 @@ body {
 	padding-top: 2px;
 }
 
-#current-hero {
+#hero-status {
     position: fixed; 
     bottom: 0;
     left: 0;

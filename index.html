@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/css/d2m.css">
+        <link rel="icon" href="/images/favicon.ico">
 
         <title>Dota 2 Monitor</title>
     </head>
@@ -36,7 +37,7 @@
         <p>Recent events:</p>
         <ul id="messages"></ul>
 
-        <div>
+        <div id="hero-status">
             <hr>
 
             <table>
@@ -142,11 +143,16 @@
 
             // General messages to be logged
             socket.on('d2gsi message update', function(msg) {
+                var scroll = (($('#messages')[0].scrollHeight - $('#messages').scrollTop()) <= $('#messages').height());
+
                 var d = new Date();
                 var t = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 
                 $('#messages').append($('<li>').text(t + " - " + msg));
-                $('#messages').scrollTop($('#messages')[0].scrollHeight); //TODO: Only scroll if already at the bottom - if user scrolls upwards stop auto-resetting the scrollTop.
+
+                if (scroll) {
+                    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+                }
             });
 
             // Hero name and portrait
