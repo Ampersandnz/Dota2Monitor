@@ -211,9 +211,7 @@
             socket.on('d2gsi item1 update', function(msg) {
                 $('#item1').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#item1').attr("src", "/images/items/" + msg + ".png");
             });
@@ -221,9 +219,7 @@
             socket.on('d2gsi item2 update', function(msg) {
                 $('#item2').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#item2').attr("src", "/images/items/" + msg + ".png");
             });
@@ -231,9 +227,7 @@
             socket.on('d2gsi item3 update', function(msg) {
                 $('#item3').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#item3').attr("src", "/images/items/" + msg + ".png");
             });
@@ -241,9 +235,7 @@
             socket.on('d2gsi item4 update', function(msg) {
                 $('#item4').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#item4').attr("src", "/images/items/" + msg + ".png");
             });
@@ -251,9 +243,7 @@
             socket.on('d2gsi item5 update', function(msg) {
                 $('#item5').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#item5').attr("src", "/images/items/" + msg + ".png");
             });
@@ -261,9 +251,7 @@
             socket.on('d2gsi item6 update', function(msg) {
                 $('#item6').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#item6').attr("src", "/images/items/" + msg + ".png");
             });
@@ -272,9 +260,7 @@
             socket.on('d2gsi stash1 update', function(msg) {
                 $('#stash1').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#stash1').attr("src", "/images/items/" + msg + ".png");
             });
@@ -282,9 +268,7 @@
             socket.on('d2gsi stash2 update', function(msg) {
                 $('#stash2').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#stash2').attr("src", "/images/items/" + msg + ".png");
             });
@@ -292,9 +276,7 @@
             socket.on('d2gsi stash3 update', function(msg) {
                 $('#stash3').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#stash3').attr("src", "/images/items/" + msg + ".png");
             });
@@ -302,9 +284,7 @@
             socket.on('d2gsi stash4 update', function(msg) {
                 $('#stash4').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#stash4').attr("src", "/images/items/" + msg + ".png");
             });
@@ -312,19 +292,15 @@
             socket.on('d2gsi stash5 update', function(msg) {
                 $('#stash5').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
-
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
+                
                 $('#stash5').attr("src", "/images/items/" + msg + ".png");
             });
 
             socket.on('d2gsi stash6 update', function(msg) {
                 $('#stash6').attr("alt", msg);
 
-                if (msg.indexOf("Recipe") > -1) {
-                    msg = "Recipe";
-                }
+                msg = (msg.indexOf("Recipe") > -1) ? "Recipe" : msg;
 
                 $('#stash6').attr("src", "/images/items/" + msg + ".png");
             });

@@ -345,7 +345,7 @@ setInterval(function() {
     clients.forEach(function(client, index) {
     });
 
-    io.emit('d2gsi message update', "Test");
+    // io.emit('d2gsi message update', "Test");
 
 // Just test data
     // io.emit('d2gsi hero update', heroes["npc_dota_hero_abaddon"]);

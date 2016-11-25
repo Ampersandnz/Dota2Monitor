@@ -23,7 +23,8 @@ body {
 	/* Opera */
 	height: -o-calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px));
 	/* Standard */
-	height: calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px)); /* Size of viewport - (Current stats header block, Recent events header text, its top and bottom padding, size of hero status footer) */
+	height: calc(100vh - (68.5px + 21px + 18px + 18px + 175px + 30px));
+	/* Size = size of (viewport - (Current stats header+ Recent events text + its top and bottom padding + hero status footer)) */
 }
 
 #messages li {
